@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+# we actually don't need it, but it can be a reminder for prod dockerfile
+COPY . .
+
+CMD ["npm", "run", "start"]
